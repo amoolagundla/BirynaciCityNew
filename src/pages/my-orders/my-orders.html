@@ -1,0 +1,75 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Orders</ion-title>
+    <ion-buttons end>     
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding class="cart gray-bg">  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+		</ion-refresher>
+    <ion-searchbar  class="bar-light bar-subheader" inset
+    placeholder="Search Orders"
+  [showCancelButton]="true"
+  (ionInput)="getCatogoriesProductName($event)"
+  (ionCancel)="onCancel($event)">
+</ion-searchbar>
+  <ion-list class="list-no-border" inset lass="animated slideInUp"  [hidden]="!myVar" >
+
+
+  <ion-item-sliding class="card" *ngFor="let item of filtered; let i = index"  c margin-top (click)="itemSelected(item)"  >
+    
+      <ion-item>
+       <small>filter</small>
+               <ion-thumbnail item-left>
+          <img src="assets/img/icon.png" alt="" style="    border-radius: 23px;
+    border-style: hidden;"/>
+        </ion-thumbnail>
+        <p><small class="text-danger">{{ item.Name }}</small></p>
+         <p><small class="text-danger">Total : ${{item.Total}} </small></p>  
+     <p><small class="text-danger"> Payment : {{ item.Payment }} </small></p>
+      <p *ngIf="item.OrderAddress!=null"><small class="text-danger">Address : {{item.OrderAddress}} </small></p>
+    <p *ngIf="item.OrderAddress==null"><small class="text-danger">Address : Carryout Order </small></p>
+        <div>
+       <button ion-button  class="btn btn-bg pull-right" (click)="track(item.OrderAddress)">
+            <ion-icon name="create"></ion-icon> </button> 
+        </div>
+         
+         
+      </ion-item>      
+    </ion-item-sliding>
+
+
+   
+  
+  </ion-list>
+   <ion-list class="list-no-border" inset lass="animated slideInUp" [hidden]="myvar">
+  <ion-item-sliding class="card" *ngFor="let item of orderViewModel; let i = index" margin-top  >
+      <ion-item>
+        <ion-thumbnail item-left (click)="itemSelected(item)">
+          <img src="assets/img/icon.png" alt="" style="    border-radius: 23px;
+    border-style: hidden;"/>
+        </ion-thumbnail>
+        <p><small class="text-danger">{{ item.Name }}</small></p>
+         <p><small class="text-danger">Total : ${{item.Total}} </small></p>  
+     <p><small class="text-danger"> Payment : {{ item.Payment }} </small></p>
+      <p *ngIf="item.OrderAddress!=null"><small class="text-danger">Address : {{item.OrderAddress}} </small></p>
+    <p *ngIf="item.OrderAddress==null"><small class="text-danger">Address : Carryout Order </small></p>
+        
+      </ion-item>      
+    </ion-item-sliding>
+    </ion-list>
+
+</ion-content>

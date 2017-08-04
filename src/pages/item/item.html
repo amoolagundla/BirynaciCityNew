@@ -1,0 +1,70 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button>
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+   
+      
+   <div class="center" >
+<h1 class="marbot15 wow  " data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: slideInUp;" > {{item.Product.ProdcutName }}</h1>
+
+<div class="tag padding-12-per  "> {{item.Product.ProductDesc}}
+</div>
+		 	 </div>
+	<ion-list>
+     <ion-item>
+       <div class="tag padding-12-per  "> spicy level &nbsp;&nbsp;&nbsp; {{item.Product.spicylevel}}
+</div>
+		  
+    <ion-range min="0" max="5" [(ngModel)]="item.Product.spicylevel" color="primary">
+      <ion-label range-left>0</ion-label>
+      <ion-label range-right>5</ion-label>
+    </ion-range>
+  </ion-item>
+	<ion-item>
+ 
+	
+	  <ion-textarea [(ngModel)]="item.Product.instructions" placeholder="Special Instructions" rows="8" cols="10" ></ion-textarea>
+		</ion-item>
+		 <ion-item>
+      <div class="center" >  <h1 class="marbot15 wow  " data-wow-delay="300ms" style="float: left;visibility: visible;animation-delay: 300ms;animation-name: slideInUp;margin-top: 6%;">Quantity x {{item.Quantity
+      }}
+      </h1>
+
+        
+          <button ion-button color="primary" class="btn btn-bg pull-right" (click)="plusQty()">
+            <ion-icon name="add"></ion-icon>
+          </button>  
+          <button ion-button color="primary" class="btn btn-bg pull-right" (click)="minusQty()">
+            <ion-icon name="remove"></ion-icon>
+          </button>
+</div>
+       </ion-item>
+	</ion-list>
+				<div text-center>
+         
+   <button type="submit" ion-button color="danger"  item-center (click)="addCart(item)" >
+      ADD TO CART (${{ total }})
+    </button>
+</div>
+
+
+</ion-content> 

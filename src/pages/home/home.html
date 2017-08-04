@@ -1,0 +1,79 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-header>
+
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title style="font-family: -webkit-pictograph;" item-center>Biryani City</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="GoToCart()">
+        <ion-icon name="ios-cart-outline"> <span small>({{ cartCount }})</span></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="card-background-page">
+    <ion-searchbar class="bar-light bar-subheader" placeholder="Start Ordering" [showCancelButton]="true" (ionInput)="getCatogoriesProductName($event)"
+        (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content>
+        </ion-refresher-content>
+    </ion-refresher>
+    <ion-card *ngFor="let item of filteredProducts" class="animated slideInUp" [hidden]="myVar">
+
+        <ion-card-content (click)="addCart(item)">
+            <div class="center">
+                <h4 class="marbot15 wow  " data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms;"> {{ item.ProdcutName }}</h4>
+
+                <div class="tag padding-12-per  "> {{item.ProductDesc}}</div>
+
+            </div>
+        </ion-card-content>
+    </ion-card>
+    <div class="center" [hidden]="!myVar">
+        <h1 class="marbot15 wow  animated slideInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: slideInUp;">Biryani City</h1>
+
+        <div class="tag padding-12-per animated slideInUp">We bring you the best of South &amp; North Indian Cuisine in Newark,De &amp; Norristown, PA &amp; Allentown, PA.
+        </div>
+
+
+    </div>
+
+<div class="center" *ngIf="myvar">
+            <h1 class="marbot15 wow  animated slideInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: slideInUp;">Sorry Biryani City is not available at your location.</h1>
+
+        </div>
+   
+   
+        
+
+    <div id="cat">
+
+        <ion-card *ngFor="let category of categories" class="animated slideInUp" (click)="ViewCategory(category.Items,category.Name)"
+            [hidden]="!myVar">
+
+            <img src="{{ category.thumb }}" alt="{{ category.name }}" />
+            <ion-card-content>
+                <ion-card-title>
+                    {{ category.Name }}
+                </ion-card-title>
+                <p>
+                    {{ category.CategoryDescription }} &nbsp;
+                    <ion-icon name="arrow-round-forward"></ion-icon>
+                </p>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>

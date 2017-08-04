@@ -1,0 +1,64 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cart</ion-title>
+    <ion-buttons end>
+      <button ion-button>
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="cart gray-bg">
+  <ion-list class="list-no-border">
+
+    <ion-item-sliding class="card" *ngFor="let item of cart; let i = index" margin-top>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="{{ item.Product.thumb }}" alt=""/>
+        </ion-thumbnail>
+        <h2>{{ item.Product.ProdcutLName }}</h2>
+       
+          <h2 class="price pull-left">
+            <span color="primary">${{ item.Product.Price }}</span>
+            <span>x {{ item.Quantity }}</span><small  class="text-danger">
+      {{ item.Product.ProdcutName }}
+      </small>
+          </h2>
+          <button ion-button  class="btn btn-bg pull-right" (click)="remove(i,item)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+         <button ion-button  class="btn btn-bg pull-right" (click)="editItem(item)">
+            <ion-icon name="create"></ion-icon>
+          </button> 
+      </ion-item>
+    
+    </ion-item-sliding>
+  
+  </ion-list>
+
+</ion-content>
+
+<!--Footer button-->
+<ion-footer class="cart-footer">
+  <ion-title>
+    <small  class="text-danger">$ </small>
+     <small  class="text-danger">{{ total }}</small>
+  </ion-title>
+  <ion-buttons end *ngIf="total>0">
+    <button ion-button (click)="buy()" color="danger">
+      Checkout
+    </button>
+  </ion-buttons>
+</ion-footer>

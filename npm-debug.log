@@ -1,0 +1,45 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\abhinav\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'ionic:serve',
+1 verbose cli   '--',
+1 verbose cli   '--v2',
+1 verbose cli   '--port',
+1 verbose cli   '8000',
+1 verbose cli   '--address',
+1 verbose cli   '0.0.0.0',
+1 verbose cli   '--livereload-port',
+1 verbose cli   '35729' ]
+2 info using npm@4.0.5
+3 info using node@v7.2.1
+4 verbose run-script [ 'preionic:serve', 'ionic:serve', 'postionic:serve' ]
+5 info lifecycle Biryani_City_App@~preionic:serve: Biryani_City_App@
+6 silly lifecycle Biryani_City_App@~preionic:serve: no script for preionic:serve, continuing
+7 info lifecycle Biryani_City_App@~ionic:serve: Biryani_City_App@
+8 verbose lifecycle Biryani_City_App@~ionic:serve: unsafe-perm in lifecycle true
+9 verbose lifecycle Biryani_City_App@~ionic:serve: PATH: C:\Users\abhinav\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;C:\Users\abhinav\Desktop\working\ionic\Biryani City New\node_modules\.bin;C:\Users\abhinav\AppData\Roaming\npm;C:\Program Files\nodejs\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;c:\Program Files (x86)\Intel\iCLS Client\;c:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;c:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Windows\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Users\abhinav\Downloads\openssl-1.0.2j-fips-x86_64\OpenSSL\bin;C:\Program Files\Git\cmd;C:\Program Files\TortoiseSVN\bin;C:\Windows\System32;C:\Users\abhinav\AppData\Local\Spoon\Cmd;C:\Program Files (x86)\Android\android-sdk\platform-tools;C:\Users\abhinav\AppData\Roaming\npm;C:\Users\abhinav\AppData\Local\Android\sdk;C:\Program Files (x86)\Microsoft VS Code\bin
+10 verbose lifecycle Biryani_City_App@~ionic:serve: CWD: C:\Users\abhinav\Desktop\working\ionic\Biryani City New
+11 silly lifecycle Biryani_City_App@~ionic:serve: Args: [ '/d /s /c',
+11 silly lifecycle   'ionic-app-scripts serve "--v2" "--port" "8000" "--address" "0.0.0.0" "--livereload-port" "35729"' ]
+12 verbose stack Error: kill ENOSYS
+12 verbose stack     at exports._errnoException (util.js:1022:11)
+12 verbose stack     at process.kill (internal/process.js:173:13)
+12 verbose stack     at process.listener (C:\Users\abhinav\AppData\Roaming\npm\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:86:15)
+12 verbose stack     at emitNone (events.js:91:20)
+12 verbose stack     at process.emit (events.js:185:7)
+12 verbose stack     at processEmit (C:\Users\abhinav\AppData\Roaming\npm\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at processEmit (C:\Users\abhinav\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at Signal.wrap.onsignal (internal/process.js:200:44)
+13 verbose cwd C:\Users\abhinav\Desktop\working\ionic\Biryani City New
+14 error Windows_NT 6.3.9600
+15 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\abhinav\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "run" "ionic:serve" "--" "--v2" "--port" "8000" "--address" "0.0.0.0" "--livereload-port" "35729"
+16 error node v7.2.1
+17 error npm  v4.0.5
+18 error code ENOSYS
+19 error errno ENOSYS
+20 error syscall kill
+21 error kill ENOSYS
+22 error If you need help, you may report this error at:
+22 error     <https://github.com/npm/npm/issues>
+23 verbose exit [ 1, true ]

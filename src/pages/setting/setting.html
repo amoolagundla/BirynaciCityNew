@@ -1,0 +1,56 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+ 
+       
+  
+
+  <!-- User settings -->
+  <ion-list class="list-full-border">
+    <ion-item>
+      <ion-label stacked color="primary">Firstname</ion-label>
+      <ion-input type="text" value="Firstname" [(ngModel)]="userInfo.FirstName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+     <ion-label stacked color="primary">LastName</ion-label>
+      <ion-input type="text" value="userInfo.LastName" [(ngModel)]="userInfo.LastName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+     <ion-label stacked color="primary">PhoneNumber</ion-label>
+      <ion-input type="text" value="userInfo.PhoneNumber" [(ngModel)]="userInfo.PhoneNumber"></ion-input>
+    </ion-item>  
+		
+  </ion-list>
+   <ion-grid inset >
+    <ion-row class="item-button-group" >
+      <ion-col >
+        <button ion-button block color="gray">
+          Cancel
+        </button>
+      </ion-col>
+      <ion-col >
+        <button ion-button block (click)="saveProfile()">
+          Save
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
