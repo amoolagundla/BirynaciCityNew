@@ -114,18 +114,18 @@ export class LoginPage implements OnInit {
 
 
     initializeApp() {
-        if (!this.platform.is('core')) {
-            this.oneSignal.startInit('19e74911-eb39-4e13-83dd-1c11cb3cba1e', '695358309253');
-            this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
-            this.oneSignal.setSubscription(true);
-            this.oneSignal.handleNotificationReceived().subscribe(() => {
-                // do something when the notification is received.
-            });
-            this.oneSignal.handleNotificationOpened().subscribe(() => {
-                // do something when the notification is opened.
-            });
-            this.oneSignal.endInit();
-        }
+        // if (!this.platform.is('core')) {
+        //     this.oneSignal.startInit('19e74911-eb39-4e13-83dd-1c11cb3cba1e', '695358309253');
+        //     this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
+        //     this.oneSignal.setSubscription(true);
+        //     this.oneSignal.handleNotificationReceived().subscribe(() => {
+        //         // do something when the notification is received.
+        //     });
+        //     this.oneSignal.handleNotificationOpened().subscribe(() => {
+        //         // do something when the notification is opened.
+        //     });
+        //     this.oneSignal.endInit();
+        // }
     }
 
 

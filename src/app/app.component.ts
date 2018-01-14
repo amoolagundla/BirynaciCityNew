@@ -10,6 +10,7 @@ import { AboutPage } from '../pages/about/about';
 import { LoginPage } from '../pages/login/login';
 import { CartService } from '../services/cart-service';
 import { UserInfo } from './app.module';
+import { TrackingPage } from '../pages/tracking/tracking';
 import { SharedDataService } from '../services/sharedDataService';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -63,7 +64,14 @@ export class MyApp {
       icon: 'ios-log-out-outline',
       count: 0,
       component: LoginPage
-    }
+    },{
+                title: 'tracking',
+                icon: 'ios-navigate-out-outline',
+                count: 0,
+                component: TrackingPage
+              }
+
+
   ];
   public loggedOutPages: any = [
     {
@@ -137,6 +145,27 @@ export class MyApp {
     else {
 
       this.pages = this.loggedInPages;
+    
+      if (this.userInfo.Roles != undefined) {
+        this.userInfo.Roles.forEach((roles: string) => {
+          if (roles == "Admin") {
+            var isalreadythere= this.pages.filter((item:any)=>item.title=='tracking');
+            if(isalreadythere.length==0)
+            {
+            this.pages.push(
+              {
+                title: 'tracking',
+                icon: 'ios-log-out-navigate',
+                count: 0,
+                component: TrackingPage
+              });
+            }
+          }
+        });
+
+
+
+      }
     }
   }
   // view my profile

@@ -4,18 +4,18 @@ import { Storage } from '@ionic/storage';
 import {Observable} from 'rxjs';
 @Injectable()
 export class HttpClient {
-public baseurl:any ='http://localhost:53852/';
-// public baseurl:any ='http://108.61.23.52/plesk-site-preview/www.biryanicityne.com/';
+  //public baseurl:any ='http://localhost:53852/';
+  public baseurl:any ='https://www.moolagundla.me/';
   constructor(private http: Http, public storage: Storage) { }
 
   createAuthorizationHeader(headers: Headers) {
-  this.storage.get('currentUser').then((cUser) => { 
-   
+  this.storage.get('currentUser').then((cUser) => {
+
 
       headers.append('Authorization', 'Bearer ' + cUser);
       headers.append('Content-Type', 'application/json');
       return headers;
-    }); 
+    });
 
   }
 
@@ -28,18 +28,18 @@ getApiToken(): Observable<Headers> {
       return headers;
     },error=>
 					{
-					 return headers;	
+					 return headers;
     }));
    //OR return Observalbe.of(this.storage.get('api_token'));
 }
 
-getHeaders(): Headers { 
+getHeaders(): Headers {
     return new Headers();
 }
 
 
-get(url: string): Observable<any> {   
-    return this.getApiToken().flatMap(head => {         
+get(url: string): Observable<any> {
+    return this.getApiToken().flatMap(head => {
        return this.http.get(this.baseurl+url , {
       headers: head
     });
@@ -48,14 +48,14 @@ get(url: string): Observable<any> {
 
   delete(url:any) {
 
-   return this.getApiToken().flatMap(head => {   
+   return this.getApiToken().flatMap(head => {
     return this.http.delete(this.baseurl+url, {
       headers: head
     });
    });
   }
   post(url:any, data:any) {
-    return this.getApiToken().flatMap(head => {   
+    return this.getApiToken().flatMap(head => {
     return this.http.post(this.baseurl+url, data, {
       headers: head
     });
@@ -63,7 +63,7 @@ get(url: string): Observable<any> {
   }
 
   put(url:any, data:any) {
-    return this.getApiToken().flatMap(head => {  
+    return this.getApiToken().flatMap(head => {
     return this.http.put(this.baseurl+url, data, {
       headers: head
     });

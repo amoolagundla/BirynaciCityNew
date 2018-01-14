@@ -127,10 +127,13 @@ public editItem(item:any)
 
   // click buy button
   buy() {
-    if (this.userInfo != null || this.userInfo != undefined ) {
+
+    // set data for categories
+
+    if (this.userInfo != null || this.userInfo != undefined) {
       this.nav.push(CheckoutPage, {
         total: this.total,
-      });  
+      });
     } else {
       this.showLoginAlert();
     }

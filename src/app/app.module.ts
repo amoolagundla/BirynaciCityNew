@@ -41,12 +41,16 @@ import {
 
  
 } from '@ionic-native/google-maps';
+import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
 import { BrowserModule } from '@angular/platform-browser';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Geolocation } from '@ionic-native/geolocation';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
 import { ItemPage } from '../pages/item/item';
+import {TrackingPage} from '../pages/tracking/tracking';
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
 @NgModule({
   declarations: [
     MyApp,
@@ -70,7 +74,8 @@ import { ItemPage } from '../pages/item/item';
     ModalContentPage,
     LoginPartialPage,
     ResetEmailPage,
-    CartIndicatorComponent
+    CartIndicatorComponent,
+    TrackingPage
   ],
   imports: [
     BrowserModule,
@@ -89,6 +94,7 @@ import { ItemPage } from '../pages/item/item';
     CheckoutPage,
     HomePage,
     LoginPage,
+
     RegisterPage,
     SettingPage,
     UserPage,
@@ -98,17 +104,20 @@ import { ItemPage } from '../pages/item/item';
     ModalContentPage,
     LoginPartialPage,
     ResetEmailPage,
-    CartIndicatorComponent
+    CartIndicatorComponent,
+    TrackingPage
   ],
   providers: [
     Storage,
+
     AuthenticationService,
     HttpClient,
     ValuesService,
     CartService,
     SharedDataService,
     OneSignal,
-    Facebook, GooglePlus, StatusBar, Geolocation, NativeGeocoder, GoogleMaps, SplashScreen
+    Facebook, GooglePlus, StatusBar, Geolocation, InAppBrowser, NativeGeocoder, GoogleMaps, SplashScreen,
+    LaunchNavigator,BackgroundGeolocation
 
   ]
 })

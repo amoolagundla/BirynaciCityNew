@@ -1,6 +1,6 @@
 {
-  "name": "Biryani_City_App",
-  "description": "Biryani City App",
+  "name": "ionic-conference-app",
+  "description": "Ionic Conference App",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -37,13 +37,26 @@
     "@ionic-native/status-bar": "^3.4.4",
     "@ionic/storage": "1.1.6",
     "angularfire2": "^2.0.0-beta.8",
+    "cordova-browser": "^5.0.3",
     "firebase": "^3.8.0",
     "ionic-angular": "3.4.2",
     "ionic-native": "2.4.1",
     "ionicons": "3.0.0",
     "rxjs": "5.4.0",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.12"
+    "zone.js": "0.8.12",
+    "cordova-ios": "4.3.1",
+    "cordova-android": "6.1.0",
+    "cordova-plugin-splashscreen": "~4.0.0",
+    "cordova-plugin-geolocation": "2.4.2",
+    "onesignal-cordova-plugin": "2.0.11",
+    "cordova-plugin-device": "~1.1.3",
+    "cordova-plugin-statusbar": "~2.2.0",
+    "ionic-plugin-keyboard": "~2.2.1",
+    "cordova-plugin-whitelist": "~1.3.1",
+    "cordova-plugin-facebook4": "~1.7.4",
+    "cordova-plugin-googleplus": "~5.1.1",
+    "cordova-plugin-ionic-webview": "^1.1.11"
   },
   "devDependencies": {
     "@ionic/app-scripts": "1.3.7",
@@ -79,5 +92,29 @@
       "version": "",
       "locator": "browser"
     }
-  ]
+  ],
+  "cordova": {
+    "platforms": [
+      "ios",
+      "android",
+      "browser"
+    ],
+    "plugins": {
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-geolocation": {},
+      "onesignal-cordova-plugin": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-statusbar": {},
+      "ionic-plugin-keyboard": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-facebook4": {
+        "APP_ID": "1828020577450397",
+        "APP_NAME": "Biryani Ciy test"
+      },
+      "cordova-plugin-googleplus": {
+        "REVERSED_CLIENT_ID": "695358309253-rg8nla5ip1bqs1sk7qlt1imlh7fsatco.apps.googleusercontent.com"
+      },
+      "cordova-plugin-ionic-webview": {}
+    }
+  }
 }

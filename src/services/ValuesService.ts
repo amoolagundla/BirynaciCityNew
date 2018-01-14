@@ -151,16 +151,4 @@ export class ValuesService {
               .get('api/Orders/getDistance/'+start+'/'+end+"/"+id).map((response: Response) => response.json());
    
     }
-     CheckLocation(start:any,end:any)
-    {
-        let PasswordReset =
-            {
-                lat: start,
-                lon: end,
-            };
-        return this.http
-              .post('api/Orders/CheckLocation/',JSON
-              .stringify(PasswordReset)).map((response: Response) => response.json());
-   
-    }
 }

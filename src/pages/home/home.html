@@ -23,57 +23,70 @@
 </ion-header>
 
 
-<ion-content class="card-background-page">
-    <ion-searchbar class="bar-light bar-subheader" placeholder="Start Ordering" [showCancelButton]="true" (ionInput)="getCatogoriesProductName($event)"
-        (ionCancel)="onCancel($event)">
-    </ion-searchbar>
-    <ion-refresher (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content>
-        </ion-refresher-content>
-    </ion-refresher>
-    <ion-card *ngFor="let item of filteredProducts" class="animated slideInUp" [hidden]="myVar">
+<ion-content class="card-background-page" >
+<ion-searchbar  class="bar-light bar-subheader"
+    placeholder="Start Ordering"
+  [showCancelButton]="true"
+  (ionInput)="getCatogoriesProductName($event)"
+  (ionCancel)="onCancel($event)">
+</ion-searchbar>
+<ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+		</ion-refresher>
+         <ion-card *ngFor="let item of filteredProducts"   class="animated slideInUp" [hidden]="myVar" >
 
-        <ion-card-content (click)="addCart(item)">
-            <div class="center">
-                <h4 class="marbot15 wow  " data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms;"> {{ item.ProdcutName }}</h4>
+      <ion-card-content (click)="addCart(item)">
+       <div class="center" >
+<h4 class="marbot15 wow  " data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms;" > {{ item.ProdcutName }}</h4>
 
-                <div class="tag padding-12-per  "> {{item.ProductDesc}}</div>
+<div class="tag padding-12-per  "> {{item.ProductDesc}}</div>
 
+		 	 </div>
+	 </ion-card-content>
+</ion-card>
+        <div class="center" [hidden]="!myVar" >
+<h1 class="marbot15 wow  animated slideInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: slideInUp;" >Biryani City</h1>
+
+<div class="tag padding-12-per animated slideInUp">We bring you the best of South &amp; North Indian Cuisine in Newark,De &amp; Norristown, PA &amp; Allentown, PA.
+</div>
+
+
+</div>
+
+
+    <section id="about" [hidden]="true">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center marb-35">
+                    <h1 class="header-p">Biryani City, Newark, DE 19702.</h1>
+                    <p class="header-p">Finest Indian Cuisine, With The Freshest Ingredients!
+                        <br>We bring you the best of South & North Indian Cuisine .
+                    </p>
+                </div>
             </div>
-        </ion-card-content>
-    </ion-card>
-    <div class="center" [hidden]="!myVar">
-        <h1 class="marbot15 wow  animated slideInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: slideInUp;">Biryani City</h1>
-
-        <div class="tag padding-12-per animated slideInUp">We bring you the best of South &amp; North Indian Cuisine in Newark,De &amp; Norristown, PA &amp; Allentown, PA.
         </div>
+    </section>
+
+       <div id="cat">
+
+<ion-card  *ngFor="let category of categories"  class="animated slideInUp" (click)="ViewCategory(category.Items,category.Name)" [hidden]="!myVar">
+
+    <img src="{{ category.thumb }}" alt="{{ category.name }}" />
+    <ion-card-content>
+        <ion-card-title>
+           {{ category.Name }}
+        </ion-card-title>
+        <p>
+            {{ category.CategoryDescription }} &nbsp;<ion-icon name="arrow-round-forward"></ion-icon>
+        </p>
+    </ion-card-content>
+</ion-card>
+</div>
 
 
-    </div>
 
-<div class="center" *ngIf="myvar">
-            <h1 class="marbot15 wow  animated slideInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: slideInUp;">Sorry Biryani City is not available at your location.</h1>
 
-        </div>
-   
-   
-        
 
-    <div id="cat">
 
-        <ion-card *ngFor="let category of categories" class="animated slideInUp" (click)="ViewCategory(category.Items,category.Name)"
-            [hidden]="!myVar">
-
-            <img src="{{ category.thumb }}" alt="{{ category.name }}" />
-            <ion-card-content>
-                <ion-card-title>
-                    {{ category.Name }}
-                </ion-card-title>
-                <p>
-                    {{ category.CategoryDescription }} &nbsp;
-                    <ion-icon name="arrow-round-forward"></ion-icon>
-                </p>
-            </ion-card-content>
-        </ion-card>
-    </div>
 </ion-content>

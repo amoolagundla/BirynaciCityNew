@@ -27,7 +27,6 @@ import {
 import { Http } from '@angular/http';
 import {  UserInfo } from '../../app/app.module';
 import { SharedDataService } from '../../services/sharedDataService';
-import { Geolocation, Geoposition } from '@ionic-native/geolocation';
 import {model } from '../../app/app.module';
 declare var $: any;
 /*
@@ -57,11 +56,11 @@ public userInfo:UserInfo;
     public product: any = '';
     public products: any = [];
     public filteredProducts: any = [];
-    
+
 
     ngOnInit() {
 
-         
+
 
         this.showList = false;
         this.cartService
@@ -85,7 +84,7 @@ public userInfo:UserInfo;
 
         this._SharedDataService.UserInfo.subscribe((data)=>
 			{
-				
+
 				this.userInfo=data;
 			});
         // subscribe to cart changes
@@ -96,39 +95,14 @@ public userInfo:UserInfo;
         private valuesService: ValuesService,
         private cartService: CartService,
         public storage: Storage,
-        public alertController: AlertController,
-         public navParams: NavParams,
-        public _SharedDataService: SharedDataService,
-        private http: Http,
-         public geolocation: Geolocation) { 
-         //    this.CheckLocation();
-           this.getCategoriesInBackGround();
+        public alertController: AlertController, public navParams: NavParams,
+        public _SharedDataService: SharedDataService,private http: Http) { this.getCategoriesInBackGround();
              this._SharedDataService.getUserInfo();
 
         }
 
-    CheckLocation()
-    {
-         this.loading.present();
 
-          this.getlocation().then((resp) => {
-      this.valuesService.CheckLocation(resp.coords.latitude , resp.coords.longitude).subscribe((data:any)=>
-      {
-          if(data ==" ")
-          {
-              this.myVar=true;
-          }
-            
-        
-      });
-    }).catch((error) => {
-        this.loading.dismiss();
-    }); 
-    }
 
- getlocation() {
-    return this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
-  }
     // add item to cart
     addCart(item: any) {
         let order = new model.OrderDetail();
@@ -152,13 +126,7 @@ public userInfo:UserInfo;
             });
     }
     getCatogories() {
-         this.loading.present();
-        this.http.get("categories.json") .subscribe(res => 
-        {
-            this.categories = res.json();
-            this.initializeItems();
-            this.loading.dismiss();
-        });
+         
     }
     initializeItems() {
         this.products = [];
@@ -172,16 +140,16 @@ public userInfo:UserInfo;
     }
     getCategoriesInBackGround()
     {
-       
+
             this.valuesService.getAllCategories()
                 .subscribe(
                 data => {
                     this.categories = data;
-                   
+
                 },
                 error => {
                 });
-      
+
     }
     getCatogoriesProductName(ev:any) {
 

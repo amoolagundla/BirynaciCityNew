@@ -14,6 +14,7 @@ import {
 } from '../../pages/order-details/order-details';
 
 import { SharedDataService } from '../../services/sharedDataService';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import {  UserInfo } from '../../app/app.module';
 /*
   Generated class for the MyOrders page.
@@ -40,7 +41,8 @@ export class MyOrdersPage {
   public storage: Storage,
   public valService:ValuesService,
   public alrt:AlertController,
-  public _SharedDataService: SharedDataService)
+  public _SharedDataService: SharedDataService,
+  private iab: InAppBrowser)
    {
 
   this._SharedDataService.UserInfo.subscribe((data)=>
@@ -64,7 +66,7 @@ export class MyOrdersPage {
   
 track(address:any)
 {
-    
+    const browser = this.iab.create('https://www.google.com/maps/search/?api=1&query='+address);
 }
 
 initializeItems() {

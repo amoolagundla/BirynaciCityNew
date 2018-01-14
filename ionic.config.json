@@ -1,6 +1,8 @@
 {
   "name": "Biryani City",
-  "app_id": "fb38da01",
-  "v2": true,
-  "typescript": true
+  "app_id": "3d5988ec",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
 }

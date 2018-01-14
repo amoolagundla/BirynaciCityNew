@@ -27,24 +27,24 @@
       <ion-item>
         <ion-label stacked>Password</ion-label>
         <ion-input  type="password" [(ngModel)]="password"></ion-input>
-      </ion-item>  
-         </ion-list>     
-        
-      <button ion-button block color="primary" (click)="login()">
+      </ion-item>
+         </ion-list>
+
+      <button ion-button block color="primary" class="btn btn-outline-primary" (click)="login()">
         SIGN IN
       </button>
-      
-    <p text-center ></p>
+
+    <p text-center text-danger ></p>
       <button ion-button block color="primary" (click)="openPasssword()">
         Forgot Password ?
       </button>
-      
+
     <p text-center ></p>
       <button ion-button block color="primary" (click)="verifyCodePasssword()">
         Got Code ?
       </button>
-     
- 
 
-   
+
+
+
 </ion-content>
