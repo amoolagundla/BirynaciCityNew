@@ -3640,3 +3640,36 @@ ion-slides[pager] {
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
 }
+.fullscreen {
+  ion-navbar-section,
+  ion-tabbar-section,
+  ion-content-section {
+    position: absolute;
+    width: 100%;
+  }
+
+  ion-navbar-section {
+    z-index: 1000;
+    top: 0;
+  }
+
+  ion-tabbar-section {
+    z-index: 1000;
+    bottom: 0;
+  }
+
+  ion-content-section {
+    z-index: 10;
+  }
+
+  scroll-content {
+    padding-top: $toolbar-ios-height + 20px; // extra padding for the ios statusbar
+    padding-bottom: $toolbar-ios-height; // Padding for the Tabbbar (only needed if tabbar is used)
+  }
+}
+
+
+
+
+
+

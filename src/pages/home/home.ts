@@ -100,7 +100,13 @@ public userInfo:UserInfo;
              this._SharedDataService.getUserInfo();
 
         }
+onPageWillEnter() {
+  document.body.classList.add('fullscreen');
+}
 
+onPageWillLeave() {
+  document.body.classList.remove('fullscreen')
+}
 
 
     // add item to cart
@@ -126,7 +132,16 @@ public userInfo:UserInfo;
             });
     }
     getCatogories() {
-         
+    //  this.loading.present();
+    //    this.valuesService.getAllCategories()
+    //        .subscribe(
+      //      data => {
+      //          this.categories = data;
+      //          this.loading.dismiss(); this.initializeItems();
+      //      },
+      //      error => {
+      //          this.loading.dismiss();
+      //      });
     }
     initializeItems() {
         this.products = [];

@@ -5,7 +5,7 @@
 page-home,
 .home {
 
-    
+
   ion-slides {
     height: auto;
   }
@@ -15,8 +15,8 @@ page-home,
 .card-background-page {
     .center, .center-align {
     text-align: center;
-    
- 
+
+
 
 }
 .marbot15 {
@@ -74,9 +74,9 @@ page-home,
     text-align: left;
     position: relative;
 }
-    .price 
+    .price
    {
-      
+
     height: 60px;
     width: 60px;
     border-radius: 50%;
@@ -90,7 +90,7 @@ page-home,
    margin-right: 20px;
     float: left;
     margin-top: 4%;
-    
+
     }
     .cart
     {
@@ -109,14 +109,11 @@ page-home,
     margin-top: 4%;
     }
 
-    #cat 
-  ion-card {
-      
-    float: left;
-    width: 80%;
+    #cat
+  ion-card {     
+
     position: relative;
     text-align: center;
-    margin-left: 10%;
     position: relative;
     text-align: center;
   }
@@ -187,7 +184,7 @@ table {
     margin-top: 300px;
     color: #FFB03B;
 }
-.logo-name h2,h1,p{ 
+.logo-name h2,h1,p{
      font-size: 15px!important;
 
 }
@@ -575,7 +572,7 @@ table {
     .details-text p {
         line-height: 16.6px;
     }
- 
+
 }
 @media (min-width: 451px) and (max-width: 767px) {
     .details-text {
@@ -583,7 +580,7 @@ table {
         border-bottom: 2px solid #A87F41;
     }
 
-    
+
 }
 @media (min-width: 20px) and (max-width: 450px) {
     .menu-restaurant {
@@ -645,12 +642,12 @@ iPad 3
 }
 /* Desktops and laptops ----------- */
 @media only screen  and (min-width : 1224px) {
- 
+
 }
 
 /* Large screens ----------- */
 @media only screen  and (min-width : 1824px) {
- 
+
 }
 
 /* iPhone 4 ----------- */
@@ -718,4 +715,4 @@ iPad 3
   display: none;
 }
 }
-} 
+}
